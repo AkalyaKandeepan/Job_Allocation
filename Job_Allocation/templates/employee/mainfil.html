@@ -1,0 +1,124 @@
+
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+    <title>authorization-policy</title>
+        {% load static %}
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Oil&Gas Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/flexslider.css'%}" type="text/css" media="screen" />
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    </head>
+    <style>
+    .dropbtn {
+      background-color: #ff7200;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-left:30px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+    #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color:white;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ff7200;
+  color: white;
+}
+</style>
+    <body>
+
+    <div class="main-1">
+            <h3 style="font-weight:bold;margin-top:30px;color:#ff7200;font-size:30px;text-align:center;">Employee DETAILS</h3>
+        <table id="customers">
+        <thead>
+        <tr class="warning">
+
+
+
+            <th>Designation</th>
+            <th>Image</th>
+            <th>Message</th>
+
+
+
+
+
+        </tr>
+        </thead>
+         {% for data in info %}
+          {% for table_2_data in table_2 %}
+            {% if data.designation == table_2_data.designation %}
+       <tbody>
+
+
+           <td>{{data.designation}}</td>
+
+
+           <td> {{data.message}}</td><br>
+        <td><a href="/media/{{o.fileToUpload}}">{{o.fileToUpload}}</a></td>
+
+
+             {% endif %}
+          {% endfor %}
+
+
+
+       </tbody>
+        {% endfor %}
+    </table>
+	</div>
+
+
+    <!-- footer-bottom -->
+    </body>
+    </html>

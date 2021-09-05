@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+<style>
+    input[type="text"] {
+    padding-bottom: 200px;
+    padding-right:200px;
+    text-align:center;
+}
+    body{
+	background-color: #F7F7F7;
+
+}
+input{
+	width: 280px;
+	padding: 10px;
+	font-size: 18px;
+
+}
+input,select{
+	border-radius: 10px;
+	border: solid 1px #CCCCCC;
+
+}
+.topnav {
+background:black;
+  overflow: hidden;
+
+}
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 35px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.topnav h3
+{
+  float: left;
+  color: #f2f2f2;
+
+  padding: 10px 16px;
+  text-decoration: none;
+
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.wow
+{
+
+  padding-left: 400px ;
+  padding-right: 500px ;
+}
+.wow1{
+
+ padding:70px 0;
+  padding-left: 450px ;
+  padding-right: 500px ;
+  }
+</style>
+
+<body>
+<form method="post">
+    {% csrf_token %}
+
+       <input type="text" name="message" value="{{emp.message}}" readonly><br>
+<br>
+       <b>Image</b><br>
+       <input type="text" name="fileToUpload" value="{{emp.fileToUpload}}" readonly><br>
+<br>
+          <b>Report</b><br>
+        <br>  Message:
+       <textarea name="emp" rows="4" cols="40" value="{{emp.emp}}" placeholder="Enter text here..">
+              </textarea><br>
+ <select name="report" value="{{emp.report}}">
+
+							 <option value="finish">completed</option>
+							 <option value="pending">pending </option>
+				 					 </select>
+
+<input id="butt" type="submit" value="Submit" >
+</form>
+</body>
+</html>

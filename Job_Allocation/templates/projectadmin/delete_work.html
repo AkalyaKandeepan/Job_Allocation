@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete employee</title>
+</head>
+<body>
+<div class="main">
+	<!-- Create a Form -->
+	<form method="POST">
+		<!-- Security token by Django -->
+		{% csrf_token %}
+        <h3>Are you want to delete this item ?</h3>
+		<input type="submit" value="Yes" style="background-color:#ff7200;color:white;font-size:20px;font-weight:bold;margin-top:30px;">
+		<a class="btn btn-primary" href="/project_reports">Cancel </a>
+	</form>
+</div>
+
+</body>
+</html>

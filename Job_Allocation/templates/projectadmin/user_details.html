@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user_detail</title>
+</head>
+<style>
+ body{
+    background-color: #eee;
+}
+.table
+{
+    float:left;
+    width: 200%;
+    padding-top: 100px;
+    padding-left:200px;
+    padding-right:200px;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+table th , table td{
+    text-align: center;
+    padding:1%
+
+
+
+}
+table td{
+padding-bottom: 2%;
+}
+table tr:nth-child(even){
+    background-color: #e4e3e3
+}
+
+th {
+  background: teal;
+  color: #fff;
+}
+
+.pagination {
+  margin: 0;
+}
+
+.pagination li:hover{
+    cursor: pointer;
+}
+
+.header_wrap {
+  padding:50px 0;
+}
+.num_rows {
+  width: 50%;
+  float:left;
+}
+.form-inline{
+  padding:50px 0;
+  padding-left: 150px ;
+
+}
+.pagination-container {
+  width: 70%;
+  float:left;
+}
+.topnav {
+  overflow: hidden;
+
+
+}
+
+.topnav a {
+  float: right;
+  color: black;
+  background-color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.com {
+  position: fixed;
+  top: 40%;
+  left: 35%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+.topnav {
+background:black;
+  overflow: hidden;
+
+}
+.topnav h4
+{
+  float: left;
+  color: #f2f2f2;
+
+  padding: 1px 16px;
+  text-decoration: none;
+
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 24px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.btn{
+ float: right;
+}
+
+</style>
+<body>
+<div class="topnav">
+<h4  style="padding-left:1px" >Secured Job Allocate System</h4>
+<a href="/logout_admin" role="button">Log out</a>
+
+<a href="/employee_com">Allocation</a>
+<a href="/project_reports">Report</a>
+<a href="/employee_details">Employee details</a>
+<a href="/work">Work</a>
+</div>
+
+
+   <div class="container">
+
+
+    <table class="table table-bordered" id="table-id">
+
+    <thead>
+      <tr>
+
+
+
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+
+
+
+
+
+
+        </tr>
+        </thead>
+        {% for o in users%}
+
+       <tbody id="button">
+        <tr>
+            <td>{{o.id}}</td>
+            <td>{{o.username}}</td>
+            <td>{{o.email}}</td>
+
+
+
+                 </tr>
+       </tbody>
+        {% endfor %}
+    </table>
+	</div>
+
+
+</body>
+</html>

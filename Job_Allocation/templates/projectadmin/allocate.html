@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+	background-color: #F7F7F7;
+
+}
+input{
+	width: 280px;
+	padding: 10px;
+	font-size: 18px;
+
+}
+input,select{
+	border-radius: 10px;
+	border: solid 1px #CCCCCC;
+
+}
+.topnav {
+background:black;
+overflow: hidden;
+
+}
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 28px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.topnav h3
+{
+  float: left;
+  color: #f2f2f2;
+  padding: 10px 16px;
+  text-decoration: none;
+
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.wow
+{
+
+  padding-left: 400px ;
+  padding-right: 500px ;
+}
+.wow1{
+
+ padding:70px 0;
+  padding-left: 450px ;
+  padding-right: 500px ;
+  }
+</style>
+<body>
+<div class="topnav">
+    <h3  style="padding-left:1px" >Secured Job Allocate System</h3>
+    <a class="btn btn-primary" href="/employee_com" role="button">Back to Comment</a>
+</div>
+<form method="post">
+    {% csrf_token %}
+<div class="wow1">
+      <b>Id</b><br>
+       <input type="text" name="id" value="{{emp.id}}" readonly><br>
+<br>
+    <strong>Message</strong><br>
+       <input type="text" name="message" value="{{emp.message}}" readonly><br>
+
+    <br>
+    <b>Image</b><br>
+           <input type="text" name="fileToUpload" value="{{emp.fileToUpload}}" readonly>
+</div>
+<div class="wow" data-wow-delay="0.4s">
+						 <span style="font-weight:bold;color:black;">Designation<label>*</label></span>
+						 <select name="designation" value="{{emp.designation}}" style="width: 96%;border: 1px solid black;outline-color:#CCCCCC;font-size: 1em;
+	                        padding: 0.5em;">
+
+							 <option value="Cleaning">Cleaning</option>
+							 <option value="electricity_maintenance">Electricity Maintenance</option>
+							 <option value="ops_Security">OPS Security</option>
+							 <option value="ac_service">AC service</option>
+							 <option value="plumbing">Plumbing</option>
+							 <option value="gardening">Gardening</option>
+							 <option value="internet">Internet</option>
+						 </select>
+
+
+<input id="butt" type="submit" value="Submit" style="background-color:#2196f3;color:white;font-size:20px;font-weight:bold;margin-top:30px;">
+
+
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+body, html {
+  height: 100%;
+
+}
+body{
+
+}
+input {
+  ::-webkit-input-placeholder {
+     color: rgba(255,255,255,0.7);
+  }
+  ::-moz-placeholder {
+     color: rgba(255,255,255,0.7);
+  }
+  :-ms-input-placeholder {
+     color: rgba(255,255,255,0.7);
+  }
+  &:focus {
+    outline: 0 transparent solid;
+    ::-webkit-input-placeholder {
+     color: rgba(0,0,0,0.7);
+    }
+    ::-moz-placeholder {
+       color: rgba(0,0,0,0.7);
+    }
+    :-ms-input-placeholder {
+       color: rgba(0,0,0,0.7);
+    }
+  }
+}
+
+.login-form {
+  //background: #222;
+  //box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+
+  min-height: .5rem;
+  margin-top: 100px;
+  margin-left: 200px;
+  max-width: 50%;
+  padding: .5rem;
+}
+.login-text {
+  //background: hsl(40,30,60);
+  //border-bottom: .5rem solid white;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: .5rem;
+  text-align: center;
+  //text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
+  .fa-stack-1x {
+    color: black;
+  }
+}
+
+.login-firstname, .login-email,.login-designation,.login-lastname{
+  background: transparent;
+  border: 0 solid;
+  border-bottom: 1px solid rgba(white, .5);
+  color: white;
+  display: block;
+  margin: 1rem;
+  padding: .5rem;
+  transition: 250ms background ease-in;
+  width: calc(100% - 3rem);
+  &:focus {
+    background: white;
+    color: black;
+    transition: 250ms background ease-in;
+  }
+}
+
+.login-forgot-pass {
+  //border-bottom: 1px solid white;
+  bottom: 0;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 75%;
+  left: 0;
+  opacity: 0.6;
+  padding: .5rem;
+  position: absolute;
+  text-align: center;
+  //text-decoration: none;
+  width: 100%;
+  &:hover {
+    opacity: 1;
+  }
+}
+.login-submit {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  display: block;
+  margin: 1rem auto;
+  min-width: 1px;
+  padding: .25rem;
+  transition: 250ms background ease-in;
+  &:hover, &:focus {
+
+    color: black;
+    transition: 250ms background ease-in;
+  }
+}
+
+
+
+
+[class*=underlay] {
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+}
+.underlay-photo {
+  animation: hue-rotate 6s infinite;
+  background: #4524a8;
+  background-size: cover;
+  -webkit-filter: grayscale(30%);
+  z-index: -1;
+}
+.underlay-black {
+  background: rgba(0,0,0,0.7);
+  z-index: -1;
+}
+
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: grayscale(30%) hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: grayscale(30%) hue-rotate(360deg);
+  }
+}
+
+
+.topnav {
+  overflow: hidden;
+
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+<body>
+<div class="topnav" style="padding-left:20px">
+    <h3  style="float:left" >Secured Job Allocate System</h3>
+    <a class="btn btn-primary" href="/employee_details" role="button">Back to Comment</a>
+</div>
+
+		  	  <form method="post" class="login-form">
+                  {% csrf_token %}
+				 <div class="register-top-grid">
+					<h3>EMPLOYEE REGISTER</h3>
+					 <div class="login-firstname" data-wow-delay="0.4s">
+						<span style="font-weight:bold;color:black;">First Name<label>*</label></span>
+						<input type="text" name="first_name" required="true"/>
+					 </div>
+					 <div class="login-lastname" data-wow-delay="0.4s">
+						<span style="font-weight:bold;color:black;">Last Name<label>*</label></span>
+						<input type="text" name="last_name" required>
+					 </div>
+					 <div class="login-email" data-wow-delay="0.4s">
+						 <span style="font-weight:bold;color:black;">Email Address<label>*</label></span>
+						 <input type="email" name="email" required>
+					 </div>
+					 <div class="login-designation" data-wow-delay="0.4s">
+						 <span style="font-weight:bold;color:black;">Designation<label>*</label></span>
+						 <select name="designation" required   style="width: 96%;border: 1px solid black;outline-color:#FF5B36;font-size: 1em;
+	                        padding: 0.5em;">
+                             <option value="select_designation">---Select Designation---</option>
+							 <option value="Cleaning">Cleaning</option>
+							 <option value="electricity_maintenance">Electricity Maintenance</option>
+							 <option value="ops_Security">OPS Security</option>
+							 <option value="ac_service">AC service</option>
+							 <option value="plumbing">Plumbing</option>
+							 <option value="gardening">Gardening</option>
+							 <option value="internet">Internet</option>
+						 </select>
+					 </div>
+                  <div  data-wow-delay="0.4s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 <span style="font-weight:bold;color:black;">Gender<label>*</label></span>
+						 <input type="radio" name="gender" value="male">Male
+                          <input type="radio" name="gender" value="female">Female
+					 </div>
+
+
+					 <div class="clearfix"> </div>
+
+					 </div>
+ <div style="width:500px;">
+<input type="submit" name="Login" value="Submit" class="login-submit" />
+
+                  </div>
+
+				</form>
+				<div class="underlay-photo"></div>
+<div class="underlay-black"></div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

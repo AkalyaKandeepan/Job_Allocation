@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>comment_view</title>
+</head>
+<style>
+    input[type="text"] {
+    padding-bottom: 200px;
+    padding-right:200px;
+    text-align:center;
+}
+    body{
+	background-color: #F7F7F7;
+
+}
+input{
+	width: 280px;
+	padding: 10px;
+	font-size: 18px;
+
+}
+input,select{
+	border-radius: 10px;
+	border: solid 1px #CCCCCC;
+
+}
+.topnav {
+background:black;
+  overflow: hidden;
+
+}
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 35px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.topnav h3
+{
+  float: left;
+  color: #f2f2f2;
+
+  padding: 10px 16px;
+  text-decoration: none;
+
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.wow
+{
+
+  padding-left: 400px ;
+  padding-right: 500px ;
+}
+.wow1{
+
+ padding:70px 0;
+  padding-left: 450px ;
+  padding-right: 500px ;
+  }
+</style>
+<body>
+<form>
+<br> <b> Message:</b><br>
+
+
+       <input type="text" id="text" name="message" value="{{com1.message}}" readonly><br>
+       <input type="image" name="fileToUpload" img src="{{com1.fileToUpload.url}}" readonly><br>
+
+<br>
+
+<br>
+    		<input type="button" id="btn"
+				value="Download" />
+		<script>
+			function download(file, text) {
+
+				//creating an invisible element
+				var element = document.createElement('a');
+				element.setAttribute('href',
+				'data:text/plain;charset=utf-8, '
+				+ encodeURIComponent(text));
+				element.setAttribute('download', file);
+
+				// Above code is equivalent to
+				// <a href="path of file" download="file name">
+
+				document.body.appendChild(element);
+
+				//onClick property
+				element.click();
+
+				document.body.removeChild(element);
+			}
+
+			// Start file download.
+			document.getElementById("btn")
+			.addEventListener("click", function() {
+				// Generate download of hello.txt
+				// file with some content
+				var text = document.getElementById("text").value;
+				var filename = "GFG.txt";
+
+				download(filename, text);
+			}, false);
+		</script>
+    </form>
+
+</body>
+</html>

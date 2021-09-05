@@ -1,0 +1,141 @@
+
+
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Django Display Images</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<style>
+ body{
+    background-color: #eee;
+}
+
+.container {
+    width: 1000px;
+    padding-top: 100px;
+}
+
+table th , table td{
+    text-align: center;
+
+}
+
+table tr:nth-child(even){
+    background-color: #e4e3e3
+}
+
+th {
+  background: teal;
+  color: #fff;
+}
+
+.pagination {
+  margin: 0;
+}
+
+.pagination li:hover{
+    cursor: pointer;
+}
+
+.header_wrap {
+  padding:30px 0;
+}
+.num_rows {
+  width: 20%;
+  float:left;
+}
+.form-inline{
+  padding:40px 0;
+  padding-left: 120px ;
+
+}
+.pagination-container {
+  width: 70%;
+  float:left;
+}
+.topnav {
+background:black;
+  overflow: hidden;
+
+}
+.topnav h4
+{
+  float: left;
+  color: #f2f2f2;
+
+  padding: 13px 16px;
+  text-decoration: none;
+
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 24px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.btn{
+ float: right;
+}
+</style>
+<body>
+
+<div class="topnav">
+    <h4  style="padding-left:1px" >Secured Job Allocate System</h4>
+<a href="/logout_admin" role="button">Log out</a>
+<a href="/view_files1">User_Field</a>
+
+</div>
+
+
+   <div class="container">
+
+    <table class="table table-bordered" id="table-id">
+
+    <thead>
+      <tr>
+
+
+
+             <th>Work</th>
+            <th>Image</th>
+            <th>view</th>
+
+
+
+
+
+        </tr>
+        </thead>
+         {% for o in objects%}
+
+       <tbody id="button">
+        <tr>
+             <td>{{o.message}}</td>
+
+
+             <td><a href="/report1/{{o.id}}">report</a></td>
+                 </tr>
+       </tbody>
+        {% endfor %}
+    </table>
+	</div>
+
+
+    <!-- footer-bottom -->
+    </body>
+    </html>
